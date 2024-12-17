@@ -1,0 +1,15 @@
+version: "3.9"
+
+services:
+  web:
+    build:
+      context: .
+    environment:
+      DATABASE_URL: file:./dev.db
+    ports:
+      - 3333:3333
+    volumes:
+      - /app/prisma
+      - ./dev.db:/app/dev.db:rw # Mount the database file with correct ownership
+      - .:/app
+      - /app/node_modules
