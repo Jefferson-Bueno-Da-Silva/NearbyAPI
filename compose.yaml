@@ -10,6 +10,3 @@ services:
       - 3333:3333
     volumes:
       - /app/prisma
-      - ./dev.db:/app/dev.db:rw # Mount the database file with correct ownership
-      - .:/app
-      - /app/node_modules
